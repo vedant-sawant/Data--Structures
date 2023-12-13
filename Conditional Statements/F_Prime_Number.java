@@ -6,33 +6,53 @@
     Author: Vedant Sawant
     Date: 11/12/2023
  */
+import java.lang.*;
 public class F_Prime_Number
 {
 	public static void main(String args[])
 	{
-		int p=2;
-		for(int i=2;i<=p;i++)
+		int p=5;
+
+
+/*    ------ BRUTE FORCE ----------------
+		for(int i=2;i<=p-1;i++)
 		{
 			if(p%i==0)
 			{
 				System.out.println("NOT PRIME");
+				break;
 			}
 			else
 			{
 				System.out.println("PRIME");
+				break;
 			}
 		}
 	}
+*/
+
+
+/* ------------- OPTIMIZED SOLUTION ------- */
+		for(int i=2;i<=Math.sqrt(p);i++)
+		{
+			if(p%i==0)
+			{
+				System.out.println("NOT PRIME");
+				break;
+			}
+			else{
+				System.out.println("PRIME");
+				break;
+			}
+
+		}
+
 
 }
 
-
+}
 /* OUTPUT
 
-PS D:\Codes\Data Structures\Data--Sructures\Conditional Statements> java .\E_Sum_Of_N_Numbers.java
-Enter Value of N:
-13
-Value of N is : 13
-Sum of N Even Numbers is: 42
+PRIME
 
 */
