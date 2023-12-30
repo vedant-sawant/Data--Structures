@@ -1,12 +1,13 @@
-*
-    Title: Search a Element return element or 1-1 if element is not found. 
+/*
+    Title: Find a Target Element From Given sorted array(ascending order) 
+			,if element is found return its index or -1 if not found.
     Topic: Binary Search
-    Input: [2, 5, 7, 1, 5]
-    Output: Target Found at Location :4 , Count is 2
+    Input: [2, 5, 7, 1, 5]  Target =2
+    Output: 0 
     Author: Vedant Sawant
-    Date: 23/12/2023
+    Date: 29/12/2023
 */
-public class binarys
+public class A_Binary_Search
 {
 	public static int binary(int arr[],int target)
 	{	
@@ -39,3 +40,9 @@ public class binarys
 		System.out.println(binary(arr,target));
 	}
 } 
+
+/*
+ OUTPUT
+ 4
+  
+ */
