@@ -1,13 +1,14 @@
 /*
-    Title: Search a Element return element or 1-1 if element is not found. 
+    Title: Ceiling of a Number
+	Problem: Given arr[] sorted. FInd target number or greater number than target.
     Topic: Binary Search
-    Input: [2, 5, 7, 1, 5]
-    Output: Target Found at Location :4 , Count is 2
+    Input: [2, 5, 7, 1, 5]   Target=6
+    Output: 7
     Author: Vedant Sawant
-    Date: 23/12/2023
+    Date: 30/12/2023
 */
 
-public class B_Ceiling_of_Number
+public class D_Ceiling_of_Number
 {
 	public static int ceiling(int arr[],int target)
 	{ //1,2,4,5,7,9,11
@@ -21,7 +22,7 @@ public class B_Ceiling_of_Number
 			{
 				return arr[mid];
 			}
-			if(target>mid)
+			if(target>arr[mid])
 			{
 				low=mid+1;	
 			}
@@ -40,3 +41,8 @@ public class B_Ceiling_of_Number
 	}
 
 }
+
+/* OUTPUT FOR TARGET 8 IN arr[]={1,2,4,5,7,9,11}
+
+   9
+ */

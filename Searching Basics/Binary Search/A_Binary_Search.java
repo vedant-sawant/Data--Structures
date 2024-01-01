@@ -36,7 +36,7 @@ public class A_Binary_Search
 	public static void main(String args[])
 	{ 
 		int arr[]={2,4,7,8,9,12,34};
-		int target=9;
+		int target=10;
 		System.out.println(binary(arr,target));
 	}
 } 
