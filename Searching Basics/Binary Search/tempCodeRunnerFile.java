@@ -1,1 +1,1 @@
-low=mid+1;
+s2.size()
