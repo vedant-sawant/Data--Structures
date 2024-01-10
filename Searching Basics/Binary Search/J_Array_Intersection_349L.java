@@ -7,27 +7,76 @@
     Date: 08/01/2024
 */
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.math.*;
 class J_Array_Intersection_349L
  {
-    public static void binary(int nums1[],int nums2[])
+    public static int[] binary(int nums1[],int nums2[])
     {
-        int l1=nums1.length;
-        int l2=nums2.length;
-        int m=Math.max(l1,l2);
-        if(l1>l2)
+        //swap nums1 with nums2 if size of nums1 is large than 2
+        //We will make nums1 as small length for binary search
+        if(nums1.length > nums2.length)
         {
-            
+            int[] temp=nums1;
+            nums1=nums2;
+            nums2=temp;
         }
-        int low=0;
-        int high=m;
+        Arrays.sort(nums2);  
+        HashSet<Integer> s1=new HashSet<>();
+        //we will pass this large array nums2 to binary search and check one by one element with small array
+        for(int i=0;i<nums1.length;i++)
+        {
+            if(binary_search(nums2, nums1[i]))
+            {
+                s1.add(nums1[i]);
+            }
+        }
+
+        //convert the hashset in array and return it.
+        /*for(int i : s1)
+        {
+            System.out.println(i);
+        }*/
+
+
+        int ans[]=new int[s1.size()];
+        int i=0;
+        for(int n : s1)
+        {
+            ans[i]=n;
+            i++;
+        }
+
+        return ans;
+
         
-        while(low<=high)
-        {
-            int mid=(low+high)/2;
-            if()
-        }
+
+
+
+        
+    }
+    public static boolean binary_search(int arr[],int target)
+    {
+            int low=0;
+            int high=arr.length-1;
+            while(low<=high)
+            {
+                int mid=(low+high)/2;
+                if(target==arr[mid])
+                {
+                    return true;
+                }
+                else if(target>arr[mid])
+                {
+                    low=mid+1;
+                }
+                else
+                {
+                    high=mid-1;
+                }
+            }
+            return false;
     }
     
     public static void brute_force(int nums1[],int nums2[])
@@ -62,10 +111,17 @@ class J_Array_Intersection_349L
         }
 
     }
+
+  
     public static void main(String[] args) {
-        int nums1[]={4,9,5};
-        int nums2[]={9,4,9,8,4};
-        inter(nums1,nums2);
+        int nums1[]={1,2};
+        int nums2[]={2,1,2};
+        //brute_force(nums1,nums2);
+        int result[]= binary(nums1,nums2);
+        for(int i=0;i<result.length;i++)
+        {
+            System.out.print(" "+result[i]);
+        }
     }
 }
 
