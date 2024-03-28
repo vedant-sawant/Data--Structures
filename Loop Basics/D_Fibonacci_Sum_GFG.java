@@ -36,6 +36,6 @@ class D_Fibonacci_Sum_GFG
 }
 
 /* OUTPUT 
-For n=5
-5
+For n=3
+4
  */
