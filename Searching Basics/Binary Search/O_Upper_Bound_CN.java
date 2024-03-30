@@ -2,8 +2,8 @@
     Title: Coding Ninjas - Implement Upper Bound
     PL: https://www.naukri.com/code360/problems/implement-upper-bound_8165383
     Topic: Binary Search
-    Input: [1,2,2,3,3,5] & x=4
-    Output: 5
+    Input: [1,2,2,3,3,5] & x=2
+    Output: 3
     Author: Vedant Sawant
     Date: 29/03/2024
 */
@@ -20,7 +20,7 @@ class O_Upper_Bound_CN
             int mid=(low+high)/2;
             if(arr[mid]>x)
             {
-                ans=arr[mid];
+                ans=mid;
                 high=mid-1;
             }
             else
