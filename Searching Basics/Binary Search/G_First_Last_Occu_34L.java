@@ -42,7 +42,7 @@ public class G_First_Last_Occu_34L
 	}
 	public static void main(String args[])
 	{
-		int nums[]={5,7,7,7,7,8,8};
+		int nums[]={7,7,5,8,8,10};
 		int target=7;
 		boolean firstoccu=true;
 		int a[]={-1,-1};
