@@ -59,7 +59,7 @@ public class L_Find_in_MountainArr_1095L
             if(low==high)
             {
                 return low;
-            }
+            }// 1 2 3 4 5 4 3 2 1
             else if(arr[mid]>arr[mid+1])
             {
                 high=mid;
