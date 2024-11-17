@@ -10,15 +10,58 @@
 
 class BankAccount
 {
-    private long b;
-    private long accnum;
-    private String name;
-    public BankAccount(long b,long accnum,String name)
+    private long accountNumber;
+    private String accountHolderName;
+    private long balance;
+    public BankAccount(long accountNumber,String accountHolderName,long balance)
     {
-        this.b=b;
-        this.accnum=accnum;
-        this.name=name;
+        this.accountNumber=accountNumber;
+        this.accountHolderName=accountHolderName;
+        this.balance=balance;
     }
 
-    
+    public long withdraw(int w)
+    {
+        if(w>balance)
+        {
+            System.out.println("Invalid ! .....");   
+        }    
+        return balance=balance-w;
+    }
+
+
+    public long deposit(int d)
+    {
+        return balance=balance+d;
+    }
+
+    public long getbalance()
+    {
+        return balance;
+    }
+
+
+}
+class Intrest extends BankAccount
+{
+    private long interstss;
+
+    public Intrest(long accountNumber,String accountHolderName,long balance,long interstss)
+    {
+        super(accountNumber, accountHolderName, balance);
+        this.interstss=interstss;
+    }
+
+    public int getintrest()
+    {
+        return (int) (getbalance()*interstss/100);
+    }
+}
+class Inheritance
+{
+    public static void main(String[] args) {
+        Intrest in=new Intrest(111,"Vedant",100,12);
+        System.out.println(in.getbalance());
+        System.out.println(in.getintrest());
+    }
 }
